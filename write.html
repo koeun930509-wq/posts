@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>게시글 등록</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="board-header">
+      <h1>게시글 등록</h1>
+    </header>
+
+    <div id="errorMsg" class="error-msg" hidden></div>
+
+    <form id="writeForm" class="write-form">
+      <div class="form-group">
+        <label for="title">제목 <span class="required">*</span></label>
+        <input type="text" id="title" placeholder="제목을 입력하세요">
+      </div>
+
+      <div class="form-group">
+        <label for="writer">작성자 <span class="required">*</span></label>
+        <input type="text" id="writer" placeholder="작성자를 입력하세요">
+      </div>
+
+      <div class="form-group">
+        <label for="content">내용 <span class="required">*</span></label>
+        <div id="content" class="content-editable" contenteditable="true" data-placeholder="내용을 입력하세요"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="image">이미지 추가</label>
+        <input type="file" id="image" accept="image/*">
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="listBtn" class="btn">목록</button>
+        <button type="reset" id="resetBtn" class="btn">초기화</button>
+        <button type="submit" id="saveBtn" class="btn btn-primary">저장</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <script src="supabase.js"></script>
+  <script src="write.js"></script>
+</body>
+</html>

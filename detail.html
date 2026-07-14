@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>게시글 상세</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="board-header">
+      <h1>게시글 상세</h1>
+    </header>
+
+    <div id="errorMsg" class="error-msg" hidden></div>
+
+    <div class="detail-card">
+      <h2 id="detailTitle" class="detail-title"></h2>
+
+      <div class="detail-meta">
+        <span id="detailWriter"></span>
+        <span id="detailCreatedAt"></span>
+        <span id="detailViewCount"></span>
+      </div>
+
+      <div id="detailContent" class="detail-content"></div>
+    </div>
+
+    <div class="detail-actions">
+      <button id="listBtn" class="btn">목록</button>
+      <div class="detail-actions-right">
+        <button id="editBtn" class="btn">수정</button>
+        <button id="deleteBtn" class="btn btn-danger">삭제</button>
+      </div>
+    </div>
+
+    <div class="comment-section">
+      <h3 class="comment-heading">댓글 <span id="commentCount" class="comment-count">0</span></h3>
+
+      <div id="commentErrorMsg" class="error-msg" hidden></div>
+
+      <ul id="commentList" class="comment-list"></ul>
+
+      <form id="commentForm" class="comment-form">
+        <div class="comment-form-fields">
+          <input type="text" id="commentWriter" placeholder="작성자">
+          <textarea id="commentContent" rows="3" placeholder="댓글을 입력하세요"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary comment-submit-btn">댓글 등록</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <script src="supabase.js"></script>
+  <script src="detail.js"></script>
+  <script src="comment.js"></script>
+</body>
+</html>
